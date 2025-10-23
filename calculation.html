@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ETN - Course Calculator</title>
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <aside class="sidebar">
+    <h2 class="logo">🎓 Empowering The Nation</h2>
+    <p class="tagline">Your Course Platform</p>
+    <nav class="menu">
+      <a href="index.html">Browse Courses</a>
+      <a href="calculation.html" class="active">Calculation</a>
+      <a href="contact.html">Contact / About</a>
+      <a href="findus.html">Find Us</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <div class="calc-container">
+      <h2>💡 Course Cost Calculator</h2>
+      <p>Select the courses you want to take:</p>
+
+      <form id="calcForm" class="calc-form" onsubmit="event.preventDefault(); goToPayment();">
+        <div class="course-options">
+          <label class="course-card"><input type="checkbox" value="1500"><span>First Aid — R1500</span></label>
+          <label class="course-card"><input type="checkbox" value="1500"><span>Sewing — R1500</span></label>
+          <label class="course-card"><input type="checkbox" value="750"><span>Child Minding — R750</span></label>
+          <label class="course-card"><input type="checkbox" value="750"><span>Cooking — R750</span></label>
+          <label class="course-card"><input type="checkbox" value="1500"><span>Landscaping — R1500</span></label>
+          <label class="course-card"><input type="checkbox" value="750"><span>Garden Maintenance — R750</span></label>
+          <label class="course-card"><input type="checkbox" value="1500"><span>Life Skills — R1500</span></label>
+        </div>
+
+        <button type="submit" class="btn">Continue to Payment</button>
+      </form>
+    </div>
+  </main>
+</div>
+
+<script>
+function goToPayment() {
+  const checkboxes = document.querySelectorAll('.course-card input:checked');
+  if (checkboxes.length === 0) {
+    alert("⚠️ Please select at least one course.");
+    return;
+  }
+
+  // Gather selected courses and total
+  let total = 0;
+  let selectedCourses = [];
+  checkboxes.forEach(cb => {
+    total += parseFloat(cb.value);
+    selectedCourses.push(cb.nextElementSibling.textContent.split(' — ')[0]);
+  });
+
+  // Save data to localStorage to use on payment page
+  localStorage.setItem('selectedCourses', JSON.stringify(selectedCourses));
+  localStorage.setItem('totalAmount', total);
+
+  // Redirect to payment page
+  window.location.href = 'payment.html';
+}
+</script>
+</body>
+</html>
