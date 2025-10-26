@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETN - Course Details</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2 class="logo">🎓 Empowering The Nation</h2>
+      <p class="tagline">Your Course Platform</p>
+      <nav class="menu">
+        <a href="home.html" >🏠 Home</a>
+        <a href="index.html">Browse Courses</a>
+        <a href="calculation.html">Calculation</a>
+        <a href="contact.html">Contact / About</a>
+        <a href="findus.html">Find Us</a>
+        <a href="profile.html">Profile</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <div class="course-detail-container">
+        <div class="course-detail-card">
+          <h2 id="course-title">Course Title</h2>
+          <p id="course-description">Course Description</p>
+          <ul id="course-topics"></ul>
+          <p class="details">Duration: <span id="course-duration"></span></p>
+          <p class="price">Price: <span id="course-price"></span></p>
+          <button class="btn" id="enroll-btn">Enroll Now</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Get the course name from the URL
+    const params = new URLSearchParams(window.location.search);
+    const courseName = params.get("name");
+
+    // Default message if course not found
+    let courseInfo = {
+      title: "No available",
+      description: "The selected course is not available.",
+      duration: "-",
+      price: "-",
+      topics: []
+    };
+
+    // Define all courses
+    if (courseName === "firstaid") {
+      courseInfo = {
+        title: "First Aid",
+        description: "Learn how to save lives in critical situations.",
+        duration: "6 Months",
+        price: "R1500",
+        topics: [
+          "Wounds and Bleeding",
+          "Burns and Fractures",
+          "Emergency Scene Management",
+          "CPR Techniques",
+          "Respiratory Distress Handling"
+        ]
+      };
+    } else if (courseName === "sewing") {
+      courseInfo = {
+        title: "Sewing",
+        description: "Master the art of clothing design and stitching.",
+        duration: "6 Months",
+        price: "R1500",
+        topics: [
+          "Fabric Cutting and Measurement",
+          "Pattern Drafting",
+          "Machine Sewing Techniques",
+          "Finishing and Styling"
+        ]
+      };
+    } else if (courseName === "childminding") {
+      courseInfo = {
+        title: "Child Minding",
+        description: "Learn effective child care and safety principles.",
+        duration: "6 Weeks",
+        price: "R750",
+        topics: [
+          "Child Safety and Hygiene",
+          "Nutrition and Feeding",
+          "Play and Learning Activities"
+        ]
+      };
+    } else if (courseName === "cooking") {
+      courseInfo = {
+        title: "Cooking",
+        description: "Develop essential culinary and kitchen management skills.",
+        duration: "6 Weeks",
+        price: "R750",
+        topics: [
+          "Food Preparation & Safety",
+          "Healthy Recipes",
+          "Kitchen Management"
+        ]
+      };
+    } else if (courseName === "landscaping") {
+      courseInfo = {
+        title: "Landscaping",
+        description: "Learn to design and maintain outdoor spaces.",
+        duration: "6 Months",
+        price: "R1500",
+        topics: [
+          "Garden Design",
+          "Plant Care",
+          "Outdoor Aesthetics"
+        ]
+      };
+    } else if (courseName === "lifeskills") {
+      courseInfo = {
+        title: "Life Skills",
+        description: "Build personal growth and communication abilities.",
+        duration: "6 Months",
+        price: "R1500",
+        topics: [
+          "Communication and Leadership",
+          "Decision Making",
+          "Goal Setting",
+          "Personal Growth"
+        ]
+      };
+    } else if (courseName === "garden") {  // Garden Maintenance
+      courseInfo = {
+        title: "Garden Maintenance",
+        description: "Learn how to maintain gardens, soil preparation, planting, and watering techniques.",
+        duration: "6 Weeks",
+        price: "R750",
+        topics: [
+          "Soil Preparation",
+          "Planting and Watering",
+          "Garden Clean-up Techniques"
+        ]
+      };
+    }
+
+    // Populate HTML with course info
+    document.getElementById("course-title").textContent = courseInfo.title;
+    document.getElementById("course-description").textContent = courseInfo.description;
+    document.getElementById("course-duration").textContent = courseInfo.duration;
+    document.getElementById("course-price").textContent = courseInfo.price;
+
+    const topicsList = document.getElementById("course-topics");
+    topicsList.innerHTML = "";
+    courseInfo.topics.forEach(topic => {
+      const li = document.createElement("li");
+      li.textContent = topic;
+      topicsList.appendChild(li);
+    });
+
+    // Enroll button click
+    document.getElementById("enroll-btn").addEventListener("click", () => {
+      window.location.href = "calculation.html";
+    });
+  </script>
+</body>
+</html>

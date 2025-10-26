@@ -785,3 +785,214 @@ iframe:hover {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
+
+.course-detail-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: #111;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid #333;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+  animation: fadeIn 1s ease;
+}
+
+.course-detail-card {
+  background-color: #1c1c1c;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid #333;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+  transition: all 0.3s ease;
+}
+
+.course-detail-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+}
+
+.course-detail-card h3 {
+  color: #d4af37;
+  margin-top: 1rem;
+}
+
+.course-detail-card p, 
+.course-detail-card li {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.course-detail-card ul {
+  margin-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background-color: #d4af37;
+  color: #000;
+  font-weight: 700;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.btn:hover {
+  background-color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* ----- Course Grid Layout ----- */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* ----- Course Cards ----- */
+/* ----- Course Cards (Dark Theme) ----- */
+.course-card {
+  background-color: #111; /* match sidebar/content */
+  border: 2px solid #222; /* subtle border */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(212, 175, 55, 0.3); /* gold glow on hover */
+}
+
+/* ----- Course Image ----- */
+.course-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 2px solid #222;
+}
+
+/* ----- Course Info ----- */
+.course-info {
+  padding: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.course-info h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  color: #d4af37; /* gold title */
+}
+
+.course-info p {
+  color: #ccc; /* light gray text */
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.course-info span {
+  font-weight: bold;
+  color: #d4af37; /* gold highlight */
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+/* ----- View Button ----- */
+.btn {
+  background-color: #d4af37; /* gold button */
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  align-self: flex-start;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #b8952d; /* darker gold hover */
+}
+
+
+/* ----- Responsive ----- */
+@media (max-width: 900px) {
+  .course-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .course-card img {
+    height: 150px;
+  }
+}
+/* ---------- HOME PAGE STYLING ---------- */
+
+.home-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #f5f7ff; /* match the soft neutral tone of other pages */
+  min-height: 100vh;
+  padding: 40px;
+}
+
+.welcome-section {
+  max-width: 650px;
+  background-color: #ffffff;
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 1s ease;
+  border-top: 6px solid #2a2a72; /* brand accent color */
+}
+
+.home-logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+  object-fit: contain;
+}
+
+.welcome-section h1 {
+  color: #2a2a72;
+  margin-bottom: 15px;
+  font-size: 2.2rem;
+}
+
+.welcome-section p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.welcome-section .btn {
+  background: #2a2a72;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.welcome-section .btn:hover {
+  background: #009ffd;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,147 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ETN - Courses</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETN - Browse Courses</title>
+  <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <aside class="sidebar">
-      <h2 class="logo">🎓 Empowering The Nation</h2>
-      <p class="tagline">Your Course Platform</p>
-      <nav class="menu">
-        <a href="index.html" class="active">Browse Courses</a>
-        <a href="calculation.html">Calculation</a>
-        <a href="contact.html">Contact / About</a>
-        <a href="findus.html">Find Us</a>
-        <a href="profile.html">Profile</a>
-      </nav>
-      <div class="student-card">
-        <div class="avatar">👤</div>
-        <div>
-          <p class="student-name">Student</p>
-          <p class="student-status">Keep learning!</p>
+<div class="container">
+  <aside class="sidebar">
+    <h2 class="logo">🎓 Empowering The Nation</h2>
+    <p class="tagline">Your Course Platform</p>
+    <nav class="menu">
+      <a href="home.html" >🏠 Home</a>
+      <a href="index.html" class="active">Browse Courses</a>
+      <a href="calculation.html">Calculation</a>
+      <a href="contact.html">Contact / About</a>
+      <a href="findus.html">Find Us</a>
+      <a href="profile.html">Profile</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <h2>📚 Explore Our Courses</h2>
+    <div class="course-grid">
+
+      <div class="course-card">
+        <img src="pictures/First-Aid.jpg" alt="First Aid Course">
+        <div class="course-info">
+          <h3>First Aid</h3>
+          <p>Learn how to save lives in critical situations.</p>
+          <span>R1500</span>
+          <button class="btn" onclick="goToCourse('firstaid')">View Course</button>
         </div>
       </div>
-    </aside>
 
-    <main class="content">
-      <div class="course-list">
-
-        <!-- Course 1 -->
-        <div class="course-card">
-          <img src="pictures/First-Aid.jpg" alt="First Aid" />
-          <div class="card-body">
-            <h3>First Aid</h3>
-            <ul>
-              <li>Wounds and Bleeding</li>
-              <li>Burns and Fractures</li>
-              <li>Emergency Scene Management</li>
-              <li>CPR Techniques</li>
-              <li>Respiratory Distress Handling</li>
-            </ul>
-            <div class="details"><span>⏱ 6 Months</span></div>
-            <p class="price">R1500</p>
-          </div>
+      <div class="course-card">
+        <img src="pictures/sewing.jpg" alt="Sewing Course">
+        <div class="course-info">
+          <h3>Sewing</h3>
+          <p>Master the art of clothing design and stitching.</p>
+          <span>R1500</span>
+          <button class="btn" onclick="goToCourse('sewing')">View Course</button>
         </div>
-
-        <!-- Course 2 -->
-        <div class="course-card">
-          <img src="pictures/sewing.jpg" alt="Sewing" />
-          <div class="card-body">
-            <h3>Sewing</h3>
-            <ul>
-              <li>Fabric Cutting and Measurement</li>
-              <li>Pattern Drafting</li>
-              <li>Machine Sewing Techniques</li>
-              <li>Finishing and Styling</li>
-            </ul>
-            <div class="details"><span>⏱ 6 Months</span></div>
-            <p class="price">R1500</p>
-          </div>
-        </div>
-
-        <!-- Course 3 -->
-        <div class="course-card">
-          <img src="pictures/childminder.jpg" alt="Child Minding" />
-          <div class="card-body">
-            <h3>Child Minding</h3>
-            <ul>
-              <li>Child Safety and Hygiene</li>
-              <li>Nutrition and Feeding</li>
-              <li>Play and Learning Activities</li>
-            </ul>
-            <div class="details"><span>⏱ 6 Weeks</span></div>
-            <p class="price">R750</p>
-          </div>
-        </div>
-
-        <!-- Course 4 -->
-        <div class="course-card">
-          <img src="pictures/Cooking.jpg" alt="Cooking" />
-          <div class="card-body">
-            <h3>Cooking</h3>
-            <ul>
-              <li>Food Preparation & Safety</li>
-              <li>Healthy Recipes</li>
-              <li>Kitchen Management</li>
-            </ul>
-            <div class="details"><span>⏱ 6 Weeks</span></div>
-            <p class="price">R750</p>
-          </div>
-        </div>
-
-        <!-- Course 5 -->
-        <div class="course-card">
-          <img src="pictures/landscaping.jpg" alt="Landscaping" />
-          <div class="card-body">
-            <h3>Landscaping</h3>
-            <ul>
-              <li>Garden Design</li>
-              <li>Plant Care</li>
-              <li>Outdoor Aesthetics</li>
-            </ul>
-            <div class="details"><span>⏱ 6 Months</span></div>
-            <p class="price">R1500</p>
-          </div>
-        </div>
-
-        <!-- Course 6 -->
-        <div class="course-card">
-          <img src="pictures/garden.jpg" alt="Garden Maintenance" />
-          <div class="card-body">
-            <h3>Garden Maintenance</h3>
-            <ul>
-              <li>Soil Preparation</li>
-              <li>Planting and Watering</li>
-              <li>Garden Clean-up Techniques</li>
-            </ul>
-            <div class="details"><span>⏱ 6 Weeks</span></div>
-            <p class="price">R750</p>
-          </div>
-        </div>
-
-        <!-- Course 7 -->
-        <div class="course-card">
-          <img src="pictures/lifeskills.jpg" alt="Life Skills" />
-          <div class="card-body">
-            <h3>Life Skills</h3>
-            <ul>
-              <li>Communication and Leadership</li>
-              <li>Decision Making</li>
-              <li>Goal Setting</li>
-              <li>Personal Growth</li>
-            </ul>
-            <div class="details"><span>⏱ 6 Months</span></div>
-            <p class="price">R1500</p>
-          </div>
-        </div>
-
       </div>
-    </main>
-  </div>
+
+      <div class="course-card">
+        <img src="pictures/childminder.jpg" alt="Child Minding Course">
+        <div class="course-info">
+          <h3>Child Minding</h3>
+          <p>Learn effective child care and safety principles.</p>
+          <span>R750</span>
+          <button class="btn" onclick="goToCourse('childminding')">View Course</button>
+        </div>
+      </div>
+
+      <!-- Course 8: Garden Maintenance -->
+      <div class="course-card">
+        <img src="pictures/garden.jpg" alt="Garden Maintenance" />
+        <div class="course-info">
+          <h3>Garden Maintenance</h3>
+          <p>Learn how to maintain gardens, soil preparation, planting, and watering techniques.</p>
+          <span>R750</span>
+          <button class="btn" onclick="goToCourse('garden')">View Course</button>
+        </div>
+      </div>
+
+
+      <div class="course-card">
+        <img src="pictures/cooking.jpg" alt="Cooking Course">
+        <div class="course-info">
+          <h3>Cooking</h3>
+          <p>Develop essential culinary and kitchen management skills.</p>
+          <span>R750</span>
+          <button class="btn" onclick="goToCourse('cooking')">View Course</button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="pictures/landscaping.jpg" alt="Landscaping Course">
+        <div class="course-info">
+          <h3>Landscaping</h3>
+          <p>Learn to design and maintain outdoor spaces.</p>
+          <span>R1500</span>
+          <button class="btn" onclick="goToCourse('landscaping')">View Course</button>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <img src="pictures/lifeskills.jpg" alt="Life Skills Course">
+        <div class="course-info">
+          <h3>Life Skills</h3>
+          <p>Build personal growth and communication abilities.</p>
+          <span>R1500</span>
+          <button class="btn" onclick="goToCourse('lifeskills')">View Course</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script>
+  function goToCourse(courseName) {
+    // Redirect to the detailed course page with the course name as a query parameter
+    window.location.href = `course.html?name=${courseName}`;
+  }
+</script>
 </body>
 </html>
